@@ -1,0 +1,75 @@
+#include <iostream>
+#include <conio.h>
+#include <Windows.h>
+using namespace std;
+ int Minutes()
+{
+ long m, s;
+ cout << "Minutes : "; cin >> m;
+ cout << "Seconds : "; cin >> s;
+ if (s == 0)
+ {
+  s = 59;
+  --m;
+ }
+ cout << "Please Enter To Continue . . .";
+ _getch();
+ system("cls");
+ for (long i = 0;; i++)
+ {
+  for (long j = 0;; j++)
+  {
+   cout <<m<<" : "<<s;
+   s--;
+   Sleep(1000);
+   system("cls");
+   if (m == 0 && s == 0)
+   {
+    cout << "STOP NOW!";
+    _getch();
+   }
+   if (s == 0)
+   {
+    m--;
+    s = 59;
+   }
+     }
+ }
+}
+int Second()
+{
+ long count;
+ cout << "Start from : "; cin >> count;
+ for (long i = 0;; i++)
+ {
+  cout << "Count now : " << count;
+  count--;
+  Sleep(1000);
+  system("cls");
+  if (count == 0)
+  {
+   cout << "STOP NOW!";
+   _getch();
+  }
+ }
+}
+int main()
+{
+ int choose;
+ cout << "Counting App : Please Choose ..\n";
+ cout << "1. Seconds Version\n";
+ cout << "2. Minutes Version\n";
+ cout << "Choose : "; cin >> choose;
+ if (choose == 1)
+ {
+  Second();
+ }
+ else if (choose == 2)
+ {
+  Minutes();
+ }
+ else
+ {
+  cout << "Wrong Choose!!";
+ }
+}
